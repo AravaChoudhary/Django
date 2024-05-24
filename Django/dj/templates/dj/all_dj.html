@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+JINJA APP with MAC | HOME
+{% endblock %}
+
+{% block content %}
+<h1 class = "bg-red-500 text-5xl">This is JINJA with MAC</h1>
+<p class="text-center w-20• bg-orange-400">Lorem ipsum dolor,sit amet consectetyr adipisicing elit. Omnis, ex.</p>
+
+<div class="grid grid-cols-3 gap-4 m-4">
+
+{% for chai in chais %}
+ <div class = "bg-blue-800 p-5 rounded">
+    <img class="rounded shadow-lg" src="{{chai.image.url}}" alt="">
+    <h3 class = "text-2xl fond-bold">{{chai.name}}</h3>
+    <a href="{% url 'chai_detail' chai.id %}">
+        <button
+        type = "button" 
+        class = "inline-flex items-center w-[100%] justify-center px-4 py-2 border 
+        border-transparent text-sm font-medium rounded-md text-white
+        bg-orange-500 hover: bg-orange-500 focus: outline-none
+        focus: ring-2 focus: ring-offset-2 focus:ring-orange-500k"
+        >
+            {{chai.type}} - {{chai.id}}
+        </button>
+    </a>
+ </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
